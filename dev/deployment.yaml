@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-more
+spec:
+  selector:
+    matchLabels:
+      app: nginx-more
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nginx-more
+    spec:
+      containers:
+      - name: nginx-more
+        image: shashwot/nginx-more
+        ports:
+        - containerPort: 80
